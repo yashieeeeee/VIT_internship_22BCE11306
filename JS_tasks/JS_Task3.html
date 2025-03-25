@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javascript Task 3</title>
+</head>
+<body>
+    <h1> </h1>
+
+    <label for="num1">Enter the first number:</label> &emsp;&nbsp;&nbsp;
+    <input type="number" id="num1" placeholder="Enter a number" />
+    <br>
+    <label for="num2">Enter the second number:</label> &nbsp;
+    <input type="number" id="num2" placeholder="Enter another number" />
+
+    <br><br>
+    <button onclick="calculateMultiplication()"> Multiply</button>
+    &emsp;
+    <button onclick="calculatedIVIDE()"> Divide</button>
+
+    <p id="Multiply">Result: </p>
+    <p id="Divide">Result: </p>
+
+    <script>
+        function calculateMultiplication() {
+            // Get the input values
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // Check if both inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("Multiply").textContent = "Please enter valid numbers.";
+            } else {
+                // Calculate the multiplication
+                var multiplication = num1 * num2;
+
+                // Display the result
+                document.getElementById("Multiply").textContent = "Multiplication: " + multiplication;
+            }
+        }
+
+        function calculatedIVIDE() {
+            // Get the input values
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // Check if both inputs are valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("Divide").textContent = "Please enter valid numbers.";
+            } else {
+                // Calculate the multiplication
+                var divide = num1 / num2;
+
+                // Display the result
+                document.getElementById("Divide").textContent = "Divide: " + divide;
+            }
+        }
+    </script>
+</body>
+</html>

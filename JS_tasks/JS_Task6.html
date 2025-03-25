@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Login</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        body {
+            background-color: #F5F5F5;
+        }
+
+        .registration-form {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-form h1 {
+            text-align: center;
+        }
+
+        .registration-form input {
+            width: 95%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+        }
+
+        .registration-form button {
+            width: 99%;
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #4040f0;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+        
+      .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .remember-me input {
+        margin-right: 10px;
+      }
+
+      .forgot-password {
+        font-size: 0.9rem;
+        color: #125688;
+      }
+
+      .sign-up {
+        text-align: center;
+        font-size: 0.9rem;
+        color: #125688;
+        margin-top: 20px;
+      }
+    </style>
+</head>
+<body>
+    <div class="registration-form">
+        <h1> <i>Instagram</i></h1>
+        <input type="text" id="username" name="username" placeholder="Username">
+        <span class="error-message" id="usernameError"></span>
+   
+        <input type="password" id="password" name="password" placeholder="Password">
+        <span class="error-message" id="passwordError"></span>
+
+
+        <button type="submit" onclick="return validateForm()">Log In</button>
+        
+        <div class="remember-forgot">
+            <div class="remember-me">
+              <input type="checkbox" id="remember" name="remember" />
+              <label for="remember">Remember Me</label>
+            </div>
+            <div class="forgot-password">Forgot password?</div>
+          </div>
+          <div class="sign-up">
+            Don't have an account! <a href="#">Sign up here.</a>
+          </div>
+    </div>
+
+    <!-- JavaScript validation code -->
+    <script>
+        function validateForm() {
+            // Clear all error messages
+            document.getElementById("usernameError").innerHTML = "";
+            document.getElementById("passwordError").innerHTML = "";
+
+            // Check the values of all of the form fields
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Check if the username is empty
+            if (username === "") {
+                document.getElementById("usernameError").innerHTML = "Username is required";
+                return false;
+            }
+
+            // Check if the password is empty
+            if (password === "") {
+                document.getElementById("passwordError").innerHTML = "Password is required";
+                return false;
+            }
+
+            // If all of the form fields are valid, submit the form
+            return true;
+        }
+    </script>
+</body>
+</html>

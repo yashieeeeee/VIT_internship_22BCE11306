@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Animation</title>
+    <style>
+        #animationContainer {
+            position: relative;
+            width: 300px;
+            height: 200px;
+        }
+
+        #animationImage {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: transform 2s linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="animationContainer">
+        <img id="animationImage" src="https://cdn.pixabay.com/animation/2023/01/20/04/27/04-27-57-299_512.gif" alt="Animated Image" />
+    </div>
+<br>
+    <button onclick="startAnimation()">Start Animation</button>
+    <button onclick="stopAnimation()">Stop Animation</button>
+
+    <script>
+        let animationInterval;
+        let isAnimating = false;
+        const animationImage = document.getElementById('animationImage');
+
+        function startAnimation() {
+            if (!isAnimating) {
+                isAnimating = true;
+                animationInterval = setInterval(moveImage, 2000); // Adjust the interval as needed
+            }
+        }
+
+        function stopAnimation() {
+            isAnimating = false;
+            clearInterval(animationInterval);
+        }
+
+        function moveImage() {
+            // Move the image to the right (you can customize the animation as needed)
+            animationImage.style.transform = 'translateX(100%)';
+
+            // After a delay, reset the image's position to the left
+            setTimeout(() => {
+                animationImage.style.transform = 'translateX(0)';
+            }, 1000); // Adjust the delay as needed
+        }
+    </script>
+</body>
+</html>
